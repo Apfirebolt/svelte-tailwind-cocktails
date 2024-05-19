@@ -6,13 +6,17 @@
     <div class="container mx-auto flex justify-between">
         <div>
             <!-- Left column content -->
-            <h1 class="text-lg font-bold">Left Column</h1>
-            <p>Some text or links here</p>
+            <h1 class="text-lg font-bold">About</h1>
+            <p>
+                Cocktail DB API is a simple application that allows you to search for cocktails and view the details of each cocktail.
+            </p>
         </div>
         <div>
             <!-- Right column content -->
-            <h1 class="text-lg font-bold">Right Column</h1>
-            <p>Some text or links here</p>
+            <h1 class="text-lg font-bold">Information</h1>
+            <p>
+                Cocktails can be searched by name or by ingredient.
+            </p>
         </div>
     </div>
 </footer>

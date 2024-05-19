@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { getCocktailData, cocktails, loader } from "../store/cocktail";
+  import { Router } from "svelte-routing"
+  import { getCocktailData, getCocktailDataByFirstLetter, cocktails, loader } from "../store/cocktail";
 
   onMount(async () => {
     await getCocktailData();
@@ -21,6 +22,17 @@
   const searchCockTail = async () => {
     await getCocktailData(searchText);
   };
+
+  const searchCockTailByFirstLetter = async () => {
+    const firstLetter = searchText.charAt(0);
+    await getCocktailDataByFirstLetter(firstLetter);
+  };
+
+  const getRandomCocktail = async () => {
+    // redirect to the cocktail/about page
+    window.location.href = "/cocktail/about";
+
+  };
 </script>
 
 <div class="pb-16 bg-blueGray-200 pt-32">
@@ -35,6 +47,14 @@
     <button
       class="bg-blue-500 text-white p-2 rounded-lg ml-2"
       on:click={() => searchCockTail()}>Search</button
+    >
+    <button
+      class="bg-blue-500 text-white p-2 rounded-lg ml-2"
+      on:click={() => searchCockTailByFirstLetter()}>Search By First Character</button
+    >
+    <button
+      class="bg-blue-500 text-white p-2 rounded-lg ml-2"
+      on:click={() => getRandomCocktail()}>Get Random</button
     >
   </div>
   <!-- Show loader if loading else loop through cocktails -->

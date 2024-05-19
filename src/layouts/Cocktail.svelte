@@ -7,8 +7,8 @@
   // pages for this layout
   import Cocktail from "../views/Cocktail.svelte";
   import About from "../views/About.svelte";
-
-  export const cocktail = "";
+  
+  export let cocktail;
 </script>
 
 <div>

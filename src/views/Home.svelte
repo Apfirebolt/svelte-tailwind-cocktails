@@ -1,7 +1,6 @@
 <script>
     import { Link } from "svelte-routing";
     const landing = "/assets/img/landing.jpg";
-    export let location;
   </script>
   
   <section class="pb-16 bg-blueGray-200 relative pt-32">
@@ -36,21 +35,19 @@
             </span>
           </p>
           <h3 class="font-semibold text-3xl">
-            Do you love this Starter Kit?
+            Do you love Cocktails?
           </h3>
           <p class="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
-            Cause if you do, it can be yours now. Hit the buttons below to
-            navigate to get the Free version for your next project. Build a new
-            web app or give an old project a new look!
+            This is an experimental application I created in Svelte to demonstrate the use of Tailwind CSS with Svelte. It is a simple application that allows you to search for cocktails and view the details of each cocktail.
           </p>
           <div class="sm:block flex flex-col mt-10">
-            <a
-              href="https://www.creative-tim.com/learning-lab/tailwind/svelte/overview/notus?ref=ns-index"
+            <Link
+              to="/cocktail"
               target="_blank"
               class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
             >
-              Get started
-            </a>
+              Cocktails
+            </Link>
           </div>
           <div class="text-center mt-16"></div>
         </div>
