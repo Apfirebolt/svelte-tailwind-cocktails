@@ -7,6 +7,7 @@
   // pages for this layout
   import Cocktail from "../views/Cocktail.svelte";
   import About from "../views/About.svelte";
+  import Filters from "../views/Filters.svelte";
   
   export let cocktail;
 </script>
@@ -18,6 +19,7 @@
       <Router url="cocktail">
         <Route path="/" component="{Cocktail}" />
         <Route path="/about" component="{About}" />
+        <Route path="/filters" component="{Filters}" />
       </Router>
     </div>
   </div>

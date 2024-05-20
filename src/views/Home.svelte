@@ -43,10 +43,15 @@
           <div class="sm:block flex flex-col mt-10">
             <Link
               to="/cocktail"
-              target="_blank"
-              class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+              class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-rose-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
             >
               Cocktails
+            </Link>
+            <Link
+              to="/cocktail/filters"
+              class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+            >
+              Filters
             </Link>
           </div>
           <div class="text-center mt-16"></div>
