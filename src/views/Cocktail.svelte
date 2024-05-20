@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { Router } from "svelte-routing"
   import { getCocktailData, getCocktailDataByFirstLetter, cocktails, loader } from "../store/cocktail";
 
   onMount(async () => {

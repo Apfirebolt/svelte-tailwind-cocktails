@@ -14,7 +14,7 @@
 
 <div class="bg-blueGray-200">
   <!-- Show loader if loading else loop through cocktails -->
-  <h2 class="text-center text-red-100 text-3xl my-5">Random Cocktail</h2>
+  <h2 class="text-center text-gray-700 text-3xl my-5">Random Cocktail</h2>
 
   <!-- If cocktail is not empty show the data -->
   {#if cocktail && Object.keys(cocktail).length > 0}
