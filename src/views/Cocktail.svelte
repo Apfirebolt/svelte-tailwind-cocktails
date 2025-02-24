@@ -3,7 +3,7 @@
   import { getCocktailData, getCocktailDataByFirstLetter, cocktails, loader } from "../store/cocktail";
 
   onMount(async () => {
-    await getCocktailData();
+    // await getCocktailData();
   });
 
   let cocktailList = [];

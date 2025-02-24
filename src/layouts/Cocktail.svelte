@@ -16,7 +16,7 @@
   <Header title="Cocktail Database App" />
   <div class="bg-blueGray-100">
     <div class="px-4 mx-auto">
-      <Router url="cocktail">
+      <Router url={cocktail}>
         <Route path="/" component="{Cocktail}" />
         <Route path="/about" component="{About}" />
         <Route path="/filters" component="{Filters}" />

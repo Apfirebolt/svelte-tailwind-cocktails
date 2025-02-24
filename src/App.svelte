@@ -11,7 +11,7 @@
   export let url = "";
 </script>
 
-<Router url="{url}">
+<Router url={url}>
   <!-- coktail layout -->
   <Route path="cocktail/*cocktail" component="{Cocktail}" />
   <Route path="/" component="{Home}" />
