@@ -9,7 +9,7 @@
   import About from "../views/About.svelte";
   import Filters from "../views/Filters.svelte";
   
-  export let cocktail;
+  export const cocktail = "";
 </script>
 
 <div>

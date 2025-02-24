@@ -75,9 +75,9 @@
       ></div>
     </div>
   {:else}
-    <div class="my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="my-4 grid grid-cols-2 md:grid-cols-3 gap-4">
       {#each cocktailList as cocktail}
-        <div class="bg-white shadow-lg rounded-lg p-8">
+        <div class="bg-white shadow-lg rounded-lg p-8 grid gap-4">
           <h2 class="text-2xl font-bold text-blueGray-800">
             {cocktail.strDrink}
           </h2>
@@ -99,7 +99,6 @@
             Glass: {cocktail.strGlass}
           </p>
         </div>
-        
       {/each}
       {#if cocktailList.length === 0}
         <div class="flex justify-center items-center h-64">
