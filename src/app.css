@@ -1,1 +1,36 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Oswald:wght@400;700&family=Roboto:wght@400;600&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@theme {
+  --color-midnight: #578E7E;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #8E1616;
+  --color-accent: #FFFDF0;
+  --color-accent-dark: #E5989B;
+  --color-accent-light: #f9f871;
+  }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+nav {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
