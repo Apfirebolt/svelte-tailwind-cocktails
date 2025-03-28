@@ -7,7 +7,7 @@
 	];
 </script>
 
-<footer class="bg-midnight text-white py-6 border-t border-gray-700">
+<footer class="bg-tertiary text-white py-6 border-t border-gray-700">
     <div class="container mx-auto text-center space-y-4 pb-8">
         <nav class="flex justify-center space-x-6">
             {#each menuItems as item}

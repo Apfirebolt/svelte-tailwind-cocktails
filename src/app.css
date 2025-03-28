@@ -11,12 +11,12 @@
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
 @theme {
-  --color-midnight: #578E7E;
-  --color-tahiti: #3ab7bf;
-  --color-bermuda: #8E1616;
-  --color-accent: #FFFDF0;
-  --color-accent-dark: #E5989B;
-  --color-accent-light: #f9f871;
+  --color-primary: #F7374F;
+  --color-secondary: #88304E;
+  --color-tertiary: #522546;
+  --color-accent: #FDFAF6;
+  --color-accent-dark: #E4EFE7;
+  --color-dark: #2C2C2C;
   }
 
 body {

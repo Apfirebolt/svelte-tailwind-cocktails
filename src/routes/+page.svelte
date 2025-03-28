@@ -121,32 +121,41 @@
         Discover your favorite cocktails and recipes
       </p>
 
-      <button
-        type="button"
-        class="btn preset-filled-secondary-500 mb-2"
-        on:click={getRandomCocktail}
-        aria-label="Get a random cocktail"
-        in:fly={{ x: 200, duration: 500, delay: 300 }}
-      >
-        Random Cocktail
-      </button>
-
       <div class="flex items-center space-x-2 mb-6">
-        <input
-          type="text"
-          placeholder="Search for a cocktail..."
-          bind:value={searchQuery}
-          class="w-full p-2 border text-black border-gray-300 rounded"
-        />
-        <button
-          type="button"
-          class="btn preset-filled-primary-500"
-          on:click={searchCocktail}
-          aria-label="Search for cocktails"
-          in:fly={{ x: 200, duration: 500, delay: 400 }}
-        >
-          Search
-        </button>
+        <div class="relative w-full">
+          <input
+            type="text"
+            placeholder="Search for a cocktail..."
+            bind:value={searchQuery}
+            class="w-full p-2 pl-10 border text-black border-gray-300 rounded"
+          />
+          <Icon
+            icon="mdi:magnify"
+            class="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"
+            width="20"
+            height="20"
+          />
+        </div>
+            <div class="flex space-x-4">
+            <button
+              type="button"
+              class="btn bg-primary text-white hover:bg-secondary transition-colors duration-150"
+              on:click={searchCocktail}
+              aria-label="Search for cocktails"
+              in:fly={{ x: 200, duration: 500, delay: 400 }}
+            >
+              Search
+            </button>
+            <button
+              type="button"
+              class="btn bg-secondary text-white hover:bg-tertiary transition-colors duration-150"
+              on:click={getRandomCocktail}
+              aria-label="Get a random cocktail"
+              in:fly={{ x: 200, duration: 500, delay: 300 }}
+            >
+              Random Cocktail
+            </button>
+            </div>
       </div>
     </div>
   </div>
@@ -156,18 +165,18 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {#if filteredCocktails.length > 0}
       {#each filteredCocktails as cocktail}
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-accent rounded-lg shadow-md overflow-hidden">
           <img
             src={cocktail.strDrinkThumb}
             alt={cocktail.strDrink}
             class="w-full h-48 object-cover"
           />
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">{cocktail.strDrink}</h3>
-            <p class="text-sm text-gray-600">
+          <div class="p-4 bg-accent-dark">
+            <h3 class="text-xl text-tertiary font-bold mb-2">{cocktail.strDrink}</h3>
+            <p class="text-sm text-tertiary">
               Category: {cocktail.strCategory}
             </p>
-            <p class="text-sm text-gray-600">
+            <p class="text-sm text-tertiary">
               Alcoholic: {cocktail.strAlcoholic}
             </p>
           </div>
@@ -182,7 +191,7 @@
 <!-- Modal -->
 {#if openModal}
   <div
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    class="fixed inset-0 bg-secondary bg-opacity-50 flex items-center justify-center z-50"
     in:fly={{ y: 200, duration: 1000 }}
     out:fly={{ y: 200, duration: 1000 }}
   >

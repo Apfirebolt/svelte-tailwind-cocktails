@@ -1,19 +1,14 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import { onMount } from "svelte";
-    import { writable } from "svelte/store";
-    import { count } from "$lib/store";
+    import { categories, ingredients, glasses } from "$lib/store";
     import HeaderComponent from "$lib/components/Header.svelte";
     import type { Category, Glass, Ingredient } from "$lib/types/Cocktail";
-  
-    let categories: Category[] = [];
-    let ingredients: Ingredient[] = [];
-    let glasses: Glass[] = [];
-    let error = null;
   
     let text = "Welcome to Svelte Cocktails";
     let displayedText = "";
     let index = 0;
+    let error: string | null = null;
   
     // Typewriter effect logic
     const typeWriter = () => {
@@ -40,15 +35,16 @@
         const ingredientsData: { drinks: Ingredient[] } = await ingredientsRes.json();
         const glassesData: { drinks: Glass[] } = await glassesRes.json();
   
-        categories = categoriesData.drinks;
-        ingredients = ingredientsData.drinks;
-        glasses = glassesData.drinks;
+        // write data to stores
+        categories.set(categoriesData.drinks);
+        ingredients.set(ingredientsData.drinks);
+        glasses.set(glassesData.drinks);
       } catch (err) {
         error = "Failed to fetch data from the Cocktails API.";
         console.error(err);
       }
     }
-  
+    
     onMount(fetchCocktailData);
   </script>
   
@@ -83,7 +79,7 @@
           Discover your favorite cocktails, glasses, ingredients and more
         </p>
         <button
-          class="px-6 py-3 bg-midnight hover:bg-blue-700 text-white font-semibold rounded-lg"
+          class="px-6 py-3 bg-tertiary hover:bg-primary transition-colors duration-150 text-white font-semibold rounded-lg"
           in:fly={{ y: 50, duration: 500, delay: 400 }}
         >
           Get Started
@@ -92,7 +88,7 @@
     </div>
   </section>
   
-  <section class="py-12 bg-gray-100">
+  <section class="py-12 bg-accent-dark">
     <div class="container mx-auto px-6">
       <h2
         class="text-3xl font-bold text-center mb-8"
@@ -101,13 +97,13 @@
         Explore Our Ingredients
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {#each ingredients as ingredient, i}
+        {#each $ingredients as ingredient, i}
           <div
-            class="text-center p-6 bg-white shadow-lg rounded-lg"
+            class="text-center p-2 bg-white shadow-lg rounded-lg"
             in:fly={{ y: 50, duration: 500, delay: i * 100 }}
           >
-            <p class="px-2 py-1 bg-accent text-gray-800 my-1">
-              {ingredient.strIngredient1}
+            <p class="px-2 py-1 bg-primary text-accent my-1">
+              {ingredient?.strIngredient1}
             </p>
           </div>
         {/each}
@@ -122,12 +118,12 @@
         Explore Our Glasses
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {#each glasses as glass, i}
+        {#each $glasses as glass, i}
           <div
-            class="text-center p-6 bg-white shadow-lg rounded-lg"
+            class="text-center p-2 bg-white shadow-lg rounded-lg"
             in:fly={{ y: 50, duration: 500, delay: i * 100 }}
           >
-            <p class="px-2 py-1 bg-accent text-gray-800 my-1">{glass.strGlass}</p>
+            <p class="px-2 py-1 bg-secondary text-accent my-1">{glass?.strGlass}</p>
           </div>
         {/each}
       </div>
@@ -141,13 +137,13 @@
         Explore Our Categories
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {#each categories as category, i}
+        {#each $categories as category, i}
           <div
-            class="text-center p-6 bg-white shadow-lg rounded-lg"
+            class="text-center p-2 bg-white shadow-lg rounded-lg"
             in:fly={{ y: 50, duration: 500, delay: i * 100 }}
           >
-            <p class="px-2 py-1 bg-accent text-gray-800 my-1">
-              {category.strCategory}
+            <p class="px-2 py-1 bg-accent-dark text-secondary my-1">
+              {category?.strCategory}
             </p>
           </div>
         {/each}
