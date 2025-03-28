@@ -11,7 +11,7 @@
     let glasses: Glass[] = [];
     let error = null;
   
-    let text = "Welcome to Svelte Games";
+    let text = "Welcome to Svelte Cocktails";
     let displayedText = "";
     let index = 0;
   
@@ -60,11 +60,11 @@
     />
   </svelte:head>
   
-  <HeaderComponent />
+  <HeaderComponent title="About Svelte Cocktails" />
   
   <section
     class="relative bg-cover bg-center h-[500px]"
-    style="background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/03/pokemon-emerald-key-art-rayquaza.jpg');"
+    style="background-image: url('https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg');"
   >
     <div
       class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black bg-opacity-50 flex items-center justify-center"
@@ -80,7 +80,7 @@
           class="text-lg md:text-xl mb-6"
           in:fly={{ y: 50, duration: 500, delay: 200 }}
         >
-          Discover your favorite games and more
+          Discover your favorite cocktails, glasses, ingredients and more
         </p>
         <button
           class="px-6 py-3 bg-midnight hover:bg-blue-700 text-white font-semibold rounded-lg"

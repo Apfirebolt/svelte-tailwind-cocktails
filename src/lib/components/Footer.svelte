@@ -17,7 +17,7 @@
             {/each}
         </nav>
         <p class="text-xl">
-            &copy; {year} Sveltekit Games. All rights reserved.
+            &copy; {year} Sveltekit Cocktails. All rights reserved.
         </p>
     </div>
 </footer>
