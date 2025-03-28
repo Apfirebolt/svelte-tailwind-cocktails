@@ -4,6 +4,7 @@
     { name: "Home", url: "/" },
     { name: "About", url: "/about" },
     { name: "Contact", url: "/contact" },
+    { name: "Filter", url: "/filters" },
   ];
   export let title: string = "Svelte Kit Cocktails";
   let isMenuOpen = false;
