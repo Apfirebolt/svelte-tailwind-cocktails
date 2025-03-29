@@ -1,12 +1,14 @@
 # Cocktails DB in Svelte
 
-[![Svelte](https://img.shields.io/badge/-Svelte-ff3e00?style=flat-square&logo=svelte&logoColor=white)](https://svelte.dev/)
+[![SvelteKit](https://img.shields.io/badge/-SvelteKit-ff3e00?style=flat-square&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38b2ac?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Docker](https://img.shields.io/badge/-Docker-2496ed?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Nginx](https://img.shields.io/badge/-Nginx-269539?style=flat-square&logo=nginx&logoColor=white)](https://nginx.org/)
 [![Vite](https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 
 I had just completed a course on Svelte and wanted to create a basic app to test things I learned. This app is pretty much the result of it. It uses this popular API which gets all the cocktails around the world. You can filter it based on category, class, is alcoholic or not and more.
+
+Update : This has been ported to Sveltekit at the time of writing this since I was facing issues with routing with newer versions of Svelte. I enjoyed working with Sveltekit and used it for more projects which you can find on my profile.
 
 ## Screenshots
 
@@ -44,13 +46,4 @@ docker run -p 4200:80 --name cocktail svelte-cocktail
 
 I had fun while creating this app, might as well become my favorite JS framework at least for the time being. Looking forward to create more projects using it as well as giving SvelteKit a try. 😄
 
-## Screenshots
-
-This is the main cocktails page of the application where you can search by first letter and by name.
-
-![Screenshot 1](screenshots/1.png)
-
-If you click on random you'd be directed to the random cocktails page which would hit API end-point to get the random cocktails of the day.
-
-![Screenshot 2](screenshots/2.png)
 

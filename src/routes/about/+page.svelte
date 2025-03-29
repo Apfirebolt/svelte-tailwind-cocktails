@@ -87,6 +87,33 @@
       </div>
     </div>
   </section>
+
+  <!-- <section class="py-12 bg-accent">
+    <div class="container mx-auto px-6">
+      <h2
+        class="text-3xl font-bold text-center mb-8"
+        in:fly={{ y: 50, duration: 500 }}
+      >
+        Explore Our Cocktails
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {#each $cocktails as cocktail, i}
+          <div
+            class="text-center p-4 bg-white shadow-lg rounded-lg"
+            in:fly={{ y: 50, duration: 500, delay: i * 100 }}
+          >
+            <img
+              src={cocktail?.strDrinkThumb}
+              alt={cocktail?.strDrink}
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 class="text-lg font-semibold mt-4">{cocktail?.strDrink}</h3>
+            <p class="text-sm text-gray-600 mt-2">{cocktail?.strCategory}</p>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section> -->
   
   <section class="py-12 bg-accent-dark">
     <div class="container mx-auto px-6">

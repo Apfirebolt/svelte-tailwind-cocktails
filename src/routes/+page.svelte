@@ -1,18 +1,17 @@
 <script lang="ts">
   import { fly, fade } from "svelte/transition";
   import HeaderComponent from "$lib/components/Header.svelte";
+  import { cocktails } from "$lib/store";
   import type { Cocktail } from "$lib/types/Cocktail";
   import Icon from "@iconify/svelte";
   import { onMount } from "svelte";
 
-  let cocktails: Cocktail[] = [];
   let cocktail: Cocktail;
   let displayedText = "Welcome to Svelte Cocktails";
-  let openModal: boolean = false; // Modal visibility state
+  let openModal: boolean = false;
   let searchQuery: string = "mar";
-  let filteredCocktails: Cocktail[] = [];
 
-  // Fetch cocktail data from the API
+  // Fetch cocktail data from the API and update the store
   const fetchCocktails = async () => {
     try {
       let res = null;
@@ -32,24 +31,19 @@
         }
       }
       const data = await res.json();
-      cocktails = data.drinks || [];
-      filteredCocktails = cocktails; // Initialize filteredCocktails
+      $cocktails = data.drinks as Cocktail[]; // Update the store
     } catch (error) {
       console.error("Error fetching cocktails:", error);
     }
   };
 
-  // Update filtered cocktails based on search query
-  $: filteredCocktails = cocktails.filter((cocktail) =>
+  // Update filtered cocktails based on search query (using a derived store value)
+  $: filteredCocktails = $cocktails.filter((cocktail) =>
     cocktail.strDrink.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const searchCocktail = async () => {
-    if (searchQuery) {
-      await fetchCocktails();
-    } else {
-      cocktails = [];
-    }
+    await fetchCocktails(); // Directly calls fetchCocktails
   };
 
   const getRandomCocktail = async () => {
@@ -62,26 +56,26 @@
       }
       const data = await res.json();
       cocktail = data.drinks[0];
-      openModal = true; // Open the modal when random cocktail is fetched
+      openModal = true;
     } catch (error) {
       console.error("Error fetching random cocktail:", error);
     }
   };
 
   const closeModal = () => {
-    openModal = false; // Close the modal
+    openModal = false;
   };
 
   const closeModalOnClickOutside = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     if (target.closest(".modal-content")) {
-      return; // Clicked inside the modal, do nothing
+      return;
     }
-    closeModal(); // Clicked outside the modal, close it
+    closeModal();
   };
 
   onMount(() => {
-    fetchCocktails(); // Fetch cocktails on component mount
+    fetchCocktails();
     window.addEventListener("click", closeModalOnClickOutside);
     return () => {
       window.removeEventListener("click", closeModalOnClickOutside);
