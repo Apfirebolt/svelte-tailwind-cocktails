@@ -8,6 +8,16 @@
 
 I had just completed a course on Svelte and wanted to create a basic app to test things I learned. This app is pretty much the result of it. It uses this popular API which gets all the cocktails around the world. You can filter it based on category, class, is alcoholic or not and more.
 
+## Screenshots
+
+Let's jump straight into screenshot to see how it looks like first :) Recently, it was upgraded from using Svelte to Svelte-Kit. I had issues with routing in Svelte app.
+
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+![Screenshot 3](screenshots/3.png)
+![Screenshot 4](screenshots/4.png)
+![Screenshot 5](screenshots/5.png)
+
 ## Features
 
 - Contains Homepage, a nested page to get random cocktail of the day, Cocktails page and a list page which has list of glass, categories and ingredients.
